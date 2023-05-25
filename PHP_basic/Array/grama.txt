@@ -1,0 +1,7 @@
+Mảng trong PHP
+
+ - Mảng là kiểu dữ liệu đặc biệt, trong đó chứa nhiều giá trị, nhiều kiểu dữ liệu khác nhau
+ - Mảng có thể là mảng 1 chiều hoặc mảng đa chiều
+ - Để khai báo, dùng từ khóa array() hoặc []
+ - Hiển thị cấu trúc mảng:
+   => print_r ($ten_mang);

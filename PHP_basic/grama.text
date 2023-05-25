@@ -1,0 +1,228 @@
+1. Cú pháp: $ten_bien; ($customerDetail_Email = 'andlp@gmail.com';)
+Lưu ý:
+ + Tên biến phải bắt đầu bằng chữ hoặc dấu gạch dưới
+ + Tên biến chứa các chữ cái, số, dấu gạch dưới
+ + PHP phân biệt chữ hoa, chữ thường
+ + PHP không cần khai báo kiểu dữ liệu
+ + Nên đặt theo quy tắc camelCase ($userId): chữ cái đầu viết thg, sau đó đầu ,ỗi chữ cái sẽ viết hoa
+
+2. In dữ liệu:
+ + Cú pháp: echo<tên biến/tên hàm/chuỗi số>;
+ + Ví dụ: echo $Customer_name;
+          echo 'nội dung';
+ + Khoảng cách: 
+          echo '<br/>';
+ + Kết quả echo in ra sẽ nhận giá trị biến được khai báo cuối cùng
+
+3. Cmt:
+ + 1 dòng: //Comment 1
+ + Nhiều dòng: /*Comment 1,2,3,..*/
+
+4. Debug:
+ + var_dump($var): Trả về kiểu dữ liệu và giá trị
+ + print_r($var): Thường dùng để in mạng và đối tượng
+
+5. Nối biến trong PHP:
+ + Có biến 1: $bien1; biến 2: $bien2
+ + Nối và hiển thị: $bien1.' chuoi bat ki'.$bien2
+ + Nối và gán $bien = $bien1.' chuoi bat ki'.$bien2
+
+6. Hằng trong PHP:
+ + Khai báo: define('ten_hang','gia tri');
+ + Đặt tên:
+  Giống 3 quy tắc đầu của tên biến
+  Nên đặt theo quy tắc underscore(viết hoa): WEB_XAMPP
+
+ + Kiểm tra xem hàm có tồn tại không:
+   $checkDefine = define('ten_hang','gia tri');
+   var_dump(&checkDefine);
+
+7. Kiểu dữ liệu trong PHP
+ + Kiểu số nguyên:  int
+ + Kiểu số thực:    float
+ + Kiểu chuỗi:      string
+ + Kiểu logic(Y/N): boolean
+ + Kiểu mảng
+ + Kiểu NULL
+ + Kiểu RESOURCE
+ + Kiểu đối tượng:  object
+
+ a. Kiểu số nguyên (int)
+  + Khai báo:           $ten_bien = so_nguyen;
+  + kiểu int:           (int)$ten_bien;
+  + Kiểm tra số nguyên: is_int($ten_bien);
+                        is_integer($ten_bien);  
+
+ b. Kiểu boolean(Y/N)
+  + Khai báo: $ten_bien = giá trị boolean;
+  + Ép kiểu dl: (bool)$ten_bien;
+  + Các kí tự: 0,trống,null => false, ngc lại là true.
+  + Kiểm tra biến kiểu boolean: is_bool($ten_bien) 
+
+ c. Kiểu float
+  + Khai báo: $ten_bien = số thực
+  + Ép kiểu: $ten_bien = (float)$ten_bien;
+  + Kiểm tra kiểu số thực: is_float($ten_bien)
+
+ d. Kiểu string
+  + Khai báo: $ten_bien = "Chuoi" hoặc 'Chuoi'
+  + Kiểm tra kiểu chuỗi: $ten_bien = is_string($ten_bien)
+
+ e. Kiểu array
+  + Khai báo: $ten_bien = [];
+  + Ép kiểu: như trên
+  + Kiểm tra: Như trên
+
+ f. Kiểu NULL (rỗng)
+  + Khai báo: $ten_bien = null;
+  + Ép kiểu sang int => 0;
+  + Ép kiểu sang string => Rỗng;
+  + Ép kiểu sang boolean => False;
+  + Kiểm tra kiểu Null: is_null($ten_bien);
+
+ g. Kiểu RESOURCE
+  + Kiểu dữ liệu đặc biệt, lưu trữ tham chiếu giữa các hàm - tài nguyên bên ngoài PHP: file, curl, database
+  + Kiểm tra: is_resource($ten_bien);
+
+ h. Kiểu object
+  + Lưu trữ dữ liệu và cách xử lý dữ liệu đó
+  + Kiểm tra: is_object($ten_bien);
+  + Ép kiểu: (object)$ten_mang;
+
+8. Toán tử => Luôn trả về kết quả true/false
+ - Toán hạng: Các biến hay các giá trị được thực hiện
+ - Toán tử: Các phép toán cộng trừ nhân chia, so sánh, lấy dư,...
+  + Toán tử gán: =, +=, -=, *=, /=, %=, .=
+  + Toán tử so sánh: +, -, *, /, %, **(lũy thừa), ++, --
+  + Toán tử so sánh: >, <, >=, <=, ==, ===, !=
+  + Toán tử lý luận: &&, ||, ! (Độ ưu tiên NOT => AND => OR)
+
+ a. Toán tử gán
+  + "=": $ten_bien = gia_tri
+  + ".=": Dùng để nối 2 hàm gán với nhau:
+           . Dùng như nối biến
+           hoặc
+           . $ten_bien .= 'gia tri moi';
+  + "+=": $ten_bien += giá trị => kết quả = biến + giá trị
+  + "-=": Tương tự +=
+  + "*=", "/=", "%=": tương tự "+=" 
+
+ b. Toán tử số học
+  + Cộng trừ nhân chia
+  + Chia lấy số dư: %
+  + Lũy thừa: **
+  + Tăng 1 đơn vị: ++
+  + Giảm 1 đơn vị: --
+
+ c. Toán tử so sánh
+  + Sẽ trả về duy nhất 1 kiểu dữ liệu boolean: True/False
+  + $check = $a > $b => True/False
+    var_dump($check);
+
+  + "==": Kiểm tra xem 2 số có bằng nhau khau k (So sánh giá trị)
+  + "===": Kiểm tra xem 2 số có bằng nhau k (cả giá trị lẫn kiểu dữ liệu)
+  + "!=" : Liểm tra 2 số khác nhau
+
+ d. Toán tử quan hệ
+  + Toán tử và (&&): Chỉ đúng khi tất cả đều đúng
+    . Nếu biểu thức có nhiều hơn 1 dấu && thì phải cho biểu thức sau vào trong (): 
+  + Toán tử hoặc (||): Chỉ cần 1 cái đúng thì biểu thức sẽ đúng
+  + Toán tử phủ định (!): Dùng để phủ định biểu thức được kiểm tra
+
+9. Câu lệnh điều kiện (if/else)
+  if(condition){
+    Các câu lệnh
+  }elseif{
+    Các câu lệnh
+  }else{
+    Các câu lệnh
+  }
+
+  Ví dụ:
+  $number = 1;
+  if($number>0){
+    echo'Số Nguyên Dương';
+  }
+
+  + Cấu trúc if/else lồng nhau: Trong if có thêm if/else khác 
+
+10. Câu lệnh rẽ nhánh Switch Case
+ - Format:
+
+  switch($ten_bien){
+    case 'giá trị 1':
+    case 'giá trị 4':
+    case 'giá trị 2':
+    // Danh sách các câu lệnh
+    break;
+
+    case 'giá trị 3':
+    break;
+
+    defaut:
+    //Danh sách các câu lệnh
+    break;
+  }
+  
+  - Giá trị case chỉ chấp nhận: int, string, boolean, null, float
+  - Quan hệ ss trong câu lệnh luôn là: (==)
+  - Dùng khi bài toàn có rất nhiều nhánh, nhưng kém linh hoạt hơn if/else
+  - Có thể kết hợp vs if/else
+  - Có thể lồng các switch case con
+  
+11. Vòng lặp trong PHP
+ - Vòng lặp là đoạn mã lệnh trong đó chương trình được lặp đi lặp lại nhiều lần cho đến khi thỏa mãn điều kiện nào đó
+ - Có 4 loại vòng lặp:
+  + Vòng lặp for: Lặp với số lần lặp được xác định trước
+  + Vòng lặp while và do while: Lặp với số lần lặp không xác định trước
+  + Vòng lặp foreach: Vòng lặp để lặp các phần tử trong mảng 
+
+ a. Vòng lặp for
+   for($ten_bien = gia_tri_dieu_kien_dung; bieu_thuc_tang){
+    Câu lệnh
+   }
+  + Ví dụ:
+   for($i=0; $i < 10; $i++){
+    echo $i."<br/>";
+   }
+
+ b. Vòng lặp while
+  + Cú pháp:
+   while(dieu_kien_dung){
+    //Danh sách câu lệnh
+   }
+
+  + Lưu ý:
+   . Vòng lặp while sẽ lặp với số lần không xác định trước
+   . Phải có điều kiện của vòng Lặp
+   . Phần xử lý thoát vòng rất quan trọng
+   . Vòng lặp sẽ không chạy nếu không thỏa mãn điều kiện
+
+ c. Vòng lặp do while
+  + Chạy câu lệnh trc r mới kiểm tra điều kiện
+  + Chạy ít nhất 1 câu lệnh kể cả điều kiện sai
+
+12. Từ khóa trong PHP
+ - Break: Thoát khỏi vòng lặp khi vòng lặp chưa kết thúc
+ - Continue: Nhảy qua vòng lặp kế tiếp
+ - die & exit: Dừng cả ctrinh phía dưới
+
+13. Import trang PHP khác vào trang PHP này
+ - path: + Dùng để lấy đường dẫn file
+        $path_file = _FILE_;
+        echo "$path_file";
+         
+         + Dùng để lấy đường dẫn đến thư mục
+        $path_dir = _DIR_;
+        echo $path_dir;
+
+ - url: 
+
+14. string
+ - Chuỗi là danh sách các kí tự nằm trong dấu "" hoặc ''
+ - Gán vào biến hay hằng số đều được
+ - Nguyên tắc: 
+   + Chuỗi đặt trong "": Các kí tự phải có ký tự \ phía trước
+   + Ví dụ: echo "Trung tâm đâò tạo \ "Unicode\" - Đào tạo lập trình PHP";
+
+ - Các hàm xử lý Chuỗi: file ex1.php

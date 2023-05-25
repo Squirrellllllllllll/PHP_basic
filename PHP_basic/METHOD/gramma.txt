@@ -1,0 +1,9 @@
+/**
+ * Phương thức gửi, nhận dữ liệu
+ * 
+ *  - get:    Nhận dữ liệu  : Tạo ra các url mà k cần tạo file mới
+ *  - post:   Gửi dữ liệu  (thêm mới)
+ *  - put:    Gửi dữ liệu  (sửa dữ liệu)
+ *  - delete: Xóa dữ liệu
+ *  - file:   Upload file
+ */
